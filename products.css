@@ -7,13 +7,7 @@ body {
     background-color: #f4f4f4;
 }
 
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-/* Header styling */
-header h1 {
+.header h1 {
   background: linear-gradient(to right, #06beb6, #48b1bf);
   color: white;
   padding: 20px;
@@ -23,6 +17,10 @@ header h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+a {
+    text-decoration: none;
+    color: #333;
+}
 
 .sidebar {
     background-color: #fff;
