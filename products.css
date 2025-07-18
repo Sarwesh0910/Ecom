@@ -1,75 +1,120 @@
-/* General body styling */
+/* Products.css */
+
+/* Reset and global styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Prevent page-wide scroll */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-/* First Header styling */
-header h1 {
-  background: linear-gradient(to right, #06beb6, #48b1bf);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin: 0;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+a {
+    text-decoration: none;
+    color: #333;
 }
 
-/* Sticky Second Navigation Header */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: #333;
-  padding: 10px 0;
-  text-align: center;
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+    width: 220px;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 20px;
-  font-weight: bold;
-  transition: color 0.3s;
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
 }
 
-nav a:hover, nav a.active {
-  color: #00ffff;
+.sidebar a {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Products scrollable section */
-main {
-  position: absolute;
-  top: 140px; /* Adjust depending on header + nav height */
-  bottom: 60px; /* Give space for footer */
-  overflow-y: auto;
-  padding: 30px;
-  width: 100%;
+.sidebar a:hover {
+    color: #0078D7;
 }
 
-main h2 {
-  text-align: center;
-  color: #333;
-  font-size: 28px;
-  margin-bottom: 20px;
+.content {
+    margin-left: 240px;
+    padding: 20px;
 }
 
-/* Product cards */
-ul {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
+/* Grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
-ul li {
-  background-color: white;
-  border-radius: 12px;
-  padding: 20px;
+/* Product card */
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Product info always sticks to bottom */
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.product-info p {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.product-info strong {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.product-info button {
+    align-self: stretch;
+    padding: 10px;
+    background-color: #0078D7;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+    background-color: #005fa3;
+}
+
+/* Hide class for filtering */
+.hide {
+    display: none !important;
 }
